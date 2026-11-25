@@ -59,7 +59,7 @@ It must come before the <body> tag.
  Always use entities for special characters in HTML text.
  Keep titles clear, concise, and descriptive (50-60 characters ideal).
  -->
-    <title>Eras Furniture &amp; Landscape</title>
+    <title>vetboss Furniture &amp; Landscape</title>
 
     <!-- 
  ================================================================================
@@ -138,7 +138,7 @@ It must come before the <body> tag.
         width: 100%;
         height: 100%;
         /* Semi-transparent black overlay (40% opacity) */
-        background: rgba(8, 8, 8, 0.411);
+        background: rgba(10, 10, 10, 0.5);
         /* Places overlay above the video but below the text */
         z-index: 1;
       }
@@ -157,7 +157,7 @@ It must come before the <body> tag.
         transform: translateY(-50%);
         padding: 0 20px;
         /* Adds subtle shadow so text remains readable over video */
-        text-shadow: 0 2px 10px rgba(238, 10, 10, 0.7);
+        text-shadow: 0 2px 10px rgba(74, 238, 25, 0.959);
       }
 
       /* Styles the main heading inside hero */
@@ -213,7 +213,7 @@ It must come before the <body> tag.
       .btn:hover {
         background-color: white;
         color: black;
-         /* Slightly enlarges button on hover */
+        /* Slightly enlarges button on hover */
       }
 
       /* Dark variant of the button */
@@ -230,8 +230,8 @@ It must come before the <body> tag.
       }
 
       .btn-light {
-        background-color: rgba(255, 255, 255, 0.8);
-        color: black;
+        background: linear-gradient(to left, #bcee05, #0817f3, #f18842);
+        color: rgb(255, 255, 255);
       }
 
       .btn-light:hover {
@@ -245,7 +245,7 @@ It must come before the <body> tag.
  */
 
       .card-section {
-        background-color: #ad5d5d;
+        background-color: #2e4fe0;
         padding: 80px 24px;
         text-align: center;
       }
@@ -272,7 +272,7 @@ It must come before the <body> tag.
       /* Individual card styling */
       .card {
         background-color: rgb(179, 197, 179);
-        border-radius: 16px;
+        border-radius: 32px;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 1);
         overflow: hidden;
         /* Initial state for scroll animation (hidden below) */
@@ -348,7 +348,7 @@ It must come before the <body> tag.
 
       .footer p {
         font-size: 0.9rem;
-        color: #aaa;
+        color: #eceaea;
       }
 
       /* 
@@ -396,7 +396,7 @@ Contains all visible content of the webpage.
  Source file for the video.
  In a real project this path must point to an actual video file.
  -->
-        <source src="/DAY-2/videos/hero-furniture-bg13.mp4" type="video/mp4" />
+        <source src="/DAY-2/VIDEO/hero-inside-lobby-bg14.mp4" type="video/mp4" />
         <!-- Fallback text shown if browser doesn't support video -->
         Your browser does not support the video tag.
       </video>
@@ -411,12 +411,12 @@ Contains all visible content of the webpage.
           <a href="#cards" class="btn">Learn More</a>
           <!-- External links to other pages (cheatsheets) -->
           <a
-            href="/DAY-2/Helper-sheets/COITB_CSS_Exam_helper.pdf"
+            href="/DAY-2/CHEATSHEETS/COITB_CSS_Exam_helper.pdf"
             class="btn btn-dark"
             >CSS Cheatsheet</a
           >
           <a
-            href="/DAY-2/Helper-sheets/COITB_JavaScript_Exam_helper.pdf"
+            href="/DAY-2/CHEATSHEETS/COITB_JavaScript_Exam_helper.pdf"
             class="btn btn-dark"
             >JS Cheatsheet</a
           >
@@ -437,7 +437,7 @@ Contains all visible content of the webpage.
         <!-- Card 1 -->
         <div class="card">
           <img
-            src="/DAY-2/images/hero-landscaping-bg11.jpeg"
+            src="/DAY-2/IMAGE/hero-landscaping-bg11.jpeg"
             alt="Shrubs and Plants"
           />
           <div class="card-content">
@@ -453,7 +453,7 @@ Contains all visible content of the webpage.
         <!-- Card 2 -->
         <div class="card">
           <img
-            src="/DAY-2/images/outside-furniture-card-2.jpeg"
+            src="/DAY-2/IMAGE/outside-furniture-card-2.jpeg"
             alt="Backyard Coverings"
           />
           <div class="card-content">
@@ -468,7 +468,10 @@ Contains all visible content of the webpage.
 
         <!-- Card 3 -->
         <div class="card">
-          <img src="/DAY-2/images/outside-furniture-card.jpeg" alt="Walking Paths" />
+          <img
+            src="/DAY-2/IMAGE/outside-furniture-card.jpeg"
+            alt="Walking Paths"
+          />
           <div class="card-content">
             <h3>Walking Paths</h3>
             <p>
@@ -482,7 +485,7 @@ Contains all visible content of the webpage.
         <!-- Card 4 -->
         <div class="card">
           <img
-            src="/DAY-2/images/outside-landscape-card.jpeg"
+            src="/DAY-2/IMAGE/outside-landscape-card.jpeg"
             alt="Ambience and Lighting"
           />
           <div class="card-content">
@@ -508,7 +511,7 @@ Contains all visible content of the webpage.
  <span id="year"></span> will be filled dynamically by JavaScript.
  -->
       <p>
-        &copy; <span id="year"></span> Eras Furniture &amp; Landscape. All
+        &copy; <span id="year"></span> vetboss Furniture &amp; Landscape. All
         rights reserved.
       </p>
     </footer>
