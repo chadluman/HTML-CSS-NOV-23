@@ -1,0 +1,292 @@
+ * {
+        /* Removes default margin from all elements (e.g. paragraphs, headings) */
+        margin: 0;
+        /* Removes default padding from all elements */
+        padding: 0;
+        /* Makes width and height calculations include padding and border */
+        box-sizing: border-box;
+      }
+
+      /* 
+ ================================================================================
+ CSS SECTION: HERO SECTION
+ ================================================================================
+ The hero is the large full-screen introductory section with video background.
+ */
+
+      /* 
+ .hero class styles the main hero container.
+ position: relative allows child elements to be positioned absolutely inside it.
+ */
+      .hero {
+        position: relative;
+        /* 100% of the parent width */
+        width: 100%;
+        /* 100vh = 100% of the viewport height (full screen height) */
+        height: 100vh;
+        /* Hides any content that overflows the container */
+        overflow: hidden;
+      }
+
+      /* 
+ Styles the <video> element inside .hero.
+ position: absolute removes it from normal flow so we can layer it.
+ */
+      .hero video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* Ensures video covers the full width even if slightly cropped */
+        min-width: 100%;
+        /* Ensures video covers the full height even if slightly cropped */
+        min-height: 100%;
+        /* Scales the video nicely while maintaining aspect ratio */
+        object-fit: cover;
+        /* Places video behind other content (z-index layering) */
+        z-index: 0;
+      }
+
+      /* 
+ .hero::before creates a dark overlay on top of the video.
+ This makes white text readable over the bright video. space
+ */
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* Semi-transparent black overlay (40% opacity) */
+        background: rgba(10, 10, 10, 0.5);
+        /* Places overlay above the video but below the text */
+        z-index: 1;
+      }
+
+      /* 
+ .hero-content holds the heading, paragraph, and buttons.
+ position: relative + z-index: 2 brings it above the overlay.
+ */
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        color: rgb(248, 239, 239);
+        text-align: center;
+        /* Vertically centers the content using top + transform trick */
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0 20px;
+        /* Adds subtle shadow so text remains readable over video */
+        text-shadow: 0 2px 10px rgba(74, 238, 25, 0.959);
+      }
+
+      /* Styles the main heading inside hero */
+      .hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      /* Styles the paragraph inside hero */
+      .hero-content p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        max-width: 600px;
+        /* Centers the paragraph horizontally */
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Container for the call-to-action buttons */
+      .hero-buttons {
+        display: flex;
+        justify-content: center;
+        /* Allows buttons to wrap to next line on small screens */
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      /* 
+ ================================================================================
+ CSS SECTION: BUTTONS
+ ================================================================================
+ */
+
+      /* Base button style used by both light and dark buttons */
+      .btn {
+        /* Removes default underline from links */
+        text-decoration: none;
+        /* Semi-transparent white background */
+        background-color: rgba(32, 241, 241, 0.2);
+        border: 2px solid white;
+        color: white;
+        padding: 12px 28px;
+        font-size: 1.1rem;
+        /* Makes buttons pill-shaped */
+        border-radius: 50px;
+        /* Smooth transition for hover effects */
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: sticky;
+      }
+
+      /* Hover state for normal buttons */
+      .btn:hover {
+        background-color: white;
+        color: black;
+        /* Slightly enlarges button on hover */
+      }
+
+      /* Dark variant of the button */
+      .btn-dark {
+        background-color: rgba(0, 0, 0, 0.6);
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+
+      /* Hover state for dark buttons */
+      .btn-dark:hover {
+        background-color: black;
+        color: white;
+        border-color: white;
+      }
+
+      .btn-light {
+        background: linear-gradient(to left, #bcee05, #0817f3, #f18842);
+        color: rgb(255, 255, 255);
+      }
+
+      .btn-light:hover {
+        background-color: white;
+        color: black;
+      }
+      /* 
+ ================================================================================
+ CSS SECTION: CARD SECTION
+ ================================================================================
+ */
+
+      .card-section {
+        background-color: #2e4fe0;
+        padding: 80px 24px;
+        text-align: center;
+      }
+
+      .card-section h2 {
+        font-size: 2rem;
+        margin-bottom: 48px;
+        color: #222;
+      }
+
+      /* 
+ .card-container uses CSS Grid for responsive card layout.
+ repeat(auto-fit, minmax(260px, 1fr)) creates as many columns as fit,
+ with each column at least 260px wide.
+ */
+      .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* Individual card styling */
+      .card {
+        background-color: rgb(179, 197, 179);
+        border-radius: 32px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 1);
+        overflow: hidden;
+        /* Initial state for scroll animation (hidden below) */
+        /*transform: translateY(40px);*/
+        opacity: 0;
+        /* Smooth animation when .show class is added */
+        transition:
+          transform 0.6s ease,
+          opacity 0.6s ease;
+      }
+
+      /* Class added by JavaScript when card scrolls into view */
+      .card.show {
+        opacity: 1;
+      }
+
+      /* Hover lift effect */
+      .card:hover {
+        /*transform: rotatex(50deg);*/
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 20px;
+      }
+
+      .card-content h3 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+        color: #222;
+      }
+
+      .card-content p {
+        font-size: 0.95rem;
+        color: #666;
+        line-height: 1.5;
+        margin-bottom: 16px;
+      }
+
+      .card-content a {
+        text-decoration: none;
+        color: white;
+        background-color: #007bff;
+        padding: 10px 20px;
+        border-radius: 15px;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+      }
+
+      .card-content a:hover {
+        background-color: #0056b3;
+      }
+
+      /* 
+ ================================================================================
+ CSS SECTION: FOOTER
+ ================================================================================
+ */
+
+      .footer {
+        background-color: #111;
+        color: white;
+        width: 100%;
+        padding: 32px 24px;
+        text-align: center;
+      }
+
+      .footer p {
+        font-size: 0.9rem;
+        color: #eceaea;
+      }
+
+      /* 
+ ================================================================================
+ CSS SECTION: RESPONSIVE DESIGN (MEDIA QUERY)
+ ================================================================================
+ Applies different styles when screen width is 640px or smaller.
+ */
+      @media (max-width: 640px) {
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+
+        .hero-content p {
+          font-size: 1rem;
+        }
+
+        .card-section {
+          padding: 48px 16px;
+        }
+      }
